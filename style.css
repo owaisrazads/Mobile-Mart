@@ -74,6 +74,32 @@ color: #0a9e9e;
     bottom: -4px;
     left: 21px;
 }
+.login-button{
+    padding: 10px 20px;
+    outline: #033434;
+    background-color: #ffffff;
+    font-weight: bold;
+    
+}
+.register-button{
+    padding: 10px 20px;
+    outline: #033434;
+    background-color: #ffffff;
+    font-weight: bold;
+    margin-left: 10px;
+    
+}
+.login-button:hover{
+    background-color: rgb(255, 255, 255);
+    color: #0a9e9e;
+}
+.register-button:hover{
+     background-color: rgb(255, 255, 255);
+    color: #0a9e9e;
+}
+input .search{
+    padding: 5px;
+}
 #hero{
     background-image: url('./assests/A92-white-top\ banner-PC.jpg');
     height: 45vh;
@@ -85,6 +111,7 @@ color: #0a9e9e;
     flex-direction:column;
     align-items: flex-start;
     justify-content: center;
+    padding-bottom: 500px;
 }
 #hero h4{
     padding-bottom: 15px;
@@ -145,19 +172,23 @@ color: #0a9e9e;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    box-shadow: black;
+    
 }
 
 .image-container {
     position: relative;
-    width: 200px;
-    height: 250px;
-    margin-left: 90px; /* वाम मार्जिन का सेट करें */
-    margin-top: 40px; /* ऊपरी मार्जिन का सेट करें */
+    width: 120px;
+    height: 130px;
+    margin-left: 90px; 
+    margin-top: 40px; 
     display: flex;
-    justify-content: space-between; /* छवियों के बीच समान दूरी */
-    align-items: center; /* छवियों को ऊपरी-तली जमीं पर सेंटर करें */
+    justify-content: space-evenly; 
+    align-items: center; 
     transition: 0.5s ease;
+    border-radius: 5px;
+    cursor: pointer;
 
     
 }
@@ -169,6 +200,7 @@ color: #0a9e9e;
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .image-shadow {
@@ -178,14 +210,15 @@ color: #0a9e9e;
     width: 100%;
     height: 100%;
     box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
 }
-.image-container h6{
+/* .image-container h6{
     text-align: center;
     justify-content: center;
     padding: 6px 0px;
     background-color: #0a9e9e;
     color: #ffffff;
-}
+} */
 
 
 
@@ -207,13 +240,14 @@ color: #0a9e9e;
     display: flex;
 } */
 .htmldiv{
-    box-shadow: 2px 2px 10px 2px #026d6d;
-    border-radius: 20px;
+    /* box-shadow: 2px 2px 10px 2px #026d6d; */
+    border-radius: 0px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     padding: 20px;
     margin-top: 30px;
+    cursor: pointer;
 }
 #itemsDiv{
     display: flex;
@@ -224,8 +258,8 @@ color: #0a9e9e;
 }
 .maindiv{
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: 2px 2px 10px 2px #026d6d;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px 2px #026d6d;
     width: 250px;
     color: #033434;
     margin: 14px;
@@ -243,18 +277,30 @@ img{
     border-radius: 20px;
     
 }
-
-button{
-    background-color: #026d6d;
+#checkBox button{
+    background-color: #068383;
     color: white;
     padding: 8px;
     border: none;
     border-radius: 10px;
     font-size: small;
     text-align: center;
-    transition: 100ms;
+    transition: 100ms; 
 }
-button:hover{
+#checkBox button:hover{
+    background-color: #0ab9b9;
+}
+button{
+    background-color: #068383;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    font-size: small;
+    text-align: center;
+    transition: 100ms; 
+}
+ button:hover{
     background-color: #0ab9b9;
 }
 
@@ -269,7 +315,7 @@ h1{
     color: rgb(124, 0, 0);
 }
 .total-price{
-    color: rgb(0, 0, 0);
+    color: rgb(253, 4, 4);
 }
 #checkBox{
     padding: 10px;

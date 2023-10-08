@@ -1,74 +1,56 @@
+
+
+// cart.js
 const data = localStorage.getItem('cartArr');
-const items = JSON.parse(data);
-console.log(items);
-
-function backToHome() {
-    window.location = 'index.html'
-    localStorage.setItem('cartArr' , JSON.stringify(items))
-}
-
-const div = document.querySelector('#itemsDiv')
-const totalAmounts = document.querySelector('.pera')
-
+const items = JSON.parse(data) || [];
 
 function render() {
     let totalAmount = 0;
-    totalAmounts.innerHTML = "";
-    if(items.length > 0){
+    const div = document.getElementById('itemsDiv');
+    const totalAmounts = document.querySelector('.pera');
+    
+    div.innerHTML = ''; // Clear the previous content
+    
+    if (items.length > 0) {
         for (let i = 0; i < items.length; i++) {
-            totalAmount += items[i].price * items[i].quantity
-            div.innerHTML += `<div class="maindiv"><img src="./assets/${items[i].image}" alt="">
-            <h1>${items[i].brand} ${items[i].model}</br>
-            Quantity:<button class = "operator" onclick = "sumValue(${i})">-</button>${items[i].quantity}<button class = "operator" onclick="addValue(${i})">+</button></br>
-            <span class="price">Price: ${items[i].price}/= pkr</span></br>
-            </h1>
-            </div>`;
-            totalAmounts.innerHTML = `Total Amount = ${totalAmount}/=`
+            totalAmount += items[i].price * items[i].quantity;
+            div.innerHTML += `
+                <div class="maindiv">
+                    <img src="./assets/${items[i].image}" alt="">
+                    <h1>${items[i].brand} ${items[i].model}</h1>
+                    <p>Quantity: ${items[i].quantity}</p>
+                    <p>Price: ${items[i].price}/= pkr</p>
+                </div>
+            `;
         }
-    } else{
-        div.innerHTML = `No Item Found ...`
+        totalAmounts.innerHTML = `Total Amount = ${totalAmount}/= pkr`;
+    } else {
+        div.innerHTML = 'No items in the cart.';
+        totalAmounts.innerHTML = '';
     }
-    
 }
 
-render()
+render();
 
+function backToHome() {
+    window.location = 'index.html';
+}
 
-
-
-function addValue(index) {
-    div.innerHTML = "";
+function increaseQuantity(index) {
     items[index].quantity += 1;
-    
-    render()
+    render();
 }
 
-function sumValue(index) {
-    div.innerHTML = "";
-    items[index].quantity -= 1;
-    
-    render()
-    if (items[index].quantity === 0){
-        div.innerHTML = "";
-        items.splice(index , 1)
-        render();
+function decreaseQuantity(index) {
+    if (items[index].quantity > 1) {
+        items[index].quantity -= 1;
+    } else {
+        items.splice(index, 1);
     }
-    
-    
+    render();
 }
 
-// function totalprice() {
-//     para.innerHTML = ""
-//     let totalprice = 0
-//     for(i = 0; i < items.length; i++){
-//         // const itemtotal = items[i].totalprice
-//         totalprice += items[i].totalprice
-        
-//     }
-//     para.innerHTML= `<p>total price: ${totalprice}</p>`
-
-// }
-
+// Save cart data to local storage when the page is unloaded
 window.onbeforeunload = function() {
-    localStorage.setItem('cartArr' , JSON.stringify(items));
+    localStorage.setItem('cartArr', JSON.stringify(items));
 };
