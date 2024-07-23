@@ -2,69 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecommerce web</title>
+    <title>Mobile Store</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="output.css" rel="stylesheet">
     <link rel="stylesheet" href="responsive.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body>
-    <section id="header">
-    <a class="logo">Mobile Mart</a>
-    <input class="search" type="search" placeholder="search bar...">
-        <div>
-            <ul class="navbar">
-                <li><a class="active" href="">Home</a></li>
-                <li><a href="">Shop</a></li>
-                <li><a href="">Blog</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="" class="cart">Cart</a></li>
-                <button class="login-button">Login</button>
-                <button class="register-button">Register</button>
-            </ul>
+    <!-- navbar start -->
+    <nav class="bg-blue-400 p-3 flex justify-between items-center flex-wrap">
+        <div class="flex justify-evenly">
+            <img class="cursor-pointer" src="./assets/bar.svg" alt="bar">
+            <img class="h-7 ml-5 cursor-pointer" src="./assets/logo.svg" alt="logo">
         </div>
-    </section>
-    <section id="hero">
-        
-    </section>
-    <section class="feature">
-    <div class="image-container">
-        <img src="./assests/itel-.jpg" alt="Your Image">
-        <div class="image-shadow"></div>
-    </div>
-    <div class="image-container">
-        <img src="https://image.oppo.com/content/dam/oppo/common/mkt/v2-2/f21_pro/navigation/v2/Navigation-SunsetOrange-427_600-pc.png.thumb.webp" height="40px" width="60px" alt="Your Image">
-        <div class="image-shadow"></div>
-    </div>
-    <div class="image-container">
-        <img src="https://images.priceoye.pk/apple-iphone-14-pakistan-priceoye-3j7db.jpg" width="80px" alt="Your Image">
-        <div class="image-shadow"></div>
-    </div>
-    <div class="image-container">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX-xMyp8U14SoA5jRKr42DAJEqzcPXbuxzRNTyJ_EBw80_sBJMUtvlzzP2ItYnI9Mx6ec&usqp=CAU" width="80px" alt="Your Image">
-        <div class="image-shadow"></div>
-    </div>
-    <div class="image-container">
-        <img src="https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1674013045706/d8b9a9398288935bb71435dfeeb27baf.png" width="80px" alt="Your Image">
-        <div class="image-shadow"></div>
-    
-    </div>
-</section>
-<div class="htmldiv"></div>
-<img src="./assests/" alt="">
-<div id="checkBox">
-    <button onclick="goToCart()">Go To Cart</button>
+        <div class="flex block justify-evenly bg-white p-3 rounded-md search-bar ">
+            <input class="w-96" type="search" placeholder="Search...">
+            <img class="h-6 cursor-pointer" src="./assets/mic-blue.svg" alt="mic-blue">
+        </div>
+        <div class="flex gap-2 ">
+            <button class="login p-2 bg-white text-blue-400 w-24 rounded-md">log in</button>
+            <button class="button-register login p-2 w-24 rounded-md">Register</button>
+        </div>
+    </nav>
+    <!-- navbar end -->
 
-</div>
-    
-        <script src="app.js"></script>
-      
-     
-     
+    <!-- category start -->
 
-    </section>
+    <div class="ml-64 mr-64 mt-3 mb-3 search-bar">
+        <div class="flex justify-evenly flex-wrap">
+            <p class="text-center text-xs cursor-pointer"><img class="h-12" src="./assets/mobiles.svg" alt="mobile">Mobiles</p>
+            <p class="text-center text-xs cursor-pointer"><img class="h-12" src="./assets/smart-watches.svg" alt="mobile">Smart Watches</p>
+            <p class="text-center text-xs cursor-pointer"><img class="h-12" src="./assets/wireless-earbuds.svg" alt="mobile">Wireless Earbuds</p>
+            <p class="text-center text-xs cursor-pointer"><img class="h-12" src="./assets/bluetooth-speakers.svg" alt="mobile">Bluetooth Speakers</p>
+            <p class="text-center text-xs cursor-pointer"><img class="h-12" src="./assets/power-banks.svg" alt="mobile">Power Banks</p>
+            <p class="text-center text-xs cursor-pointer"><img class="h-12" src="./assets/laptops.svg" alt="mobile">Laptops</p>
+            <p class="text-center text-xs cursor-pointer"><img class="h-12" src="./assets/tablets.svg" alt="mobile">Tablets</p>
+        </div>
+    </div>
+    <!-- category end -->
+
+    <!-- banner start -->
+
+    <div>
+        <img src="./assets/pakistan-priceoye-slider-qkxz8.jpg" alt="banner">
+    </div>
+    <h1 class="my">Mobile Store</h1>
+    <div class="htmldiv"></div>
+    <img src="./assets/" alt="">
+    <div id="checkBox">
+        <button class="add-btn" onclick="goToCart()">Go To Cart</button>
+
+    </div>
+
+
+
+    <script src="app.js"></script>
 </body>
 </html>
-
